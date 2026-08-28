@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Cabinet Dentaire</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="contact">
+
+<div id="layout-header"></div>
+
+<section class="page-hero">
+  <h1>Contact</h1>
+  <p>Une question ? Écrivez-nous, ou prenez directement rendez-vous en ligne.</p>
+</section>
+
+<section>
+  <div class="booking-layout">
+    <div class="booking-panel">
+      <h2 style="margin-top:0;">Nos coordonnées</h2>
+      <p><strong>Adresse :</strong> <span id="contact-adresse">—</span></p>
+      <p><strong>Téléphone :</strong> <span id="contact-tel">—</span></p>
+      <p><strong>Email :</strong> <span id="contact-email">—</span></p>
+      <p><strong>Horaires :</strong> Lundi - Vendredi, 9h00 - 12h30 et 14h00 - 18h30</p>
+      <div class="map-placeholder" style="margin-top:1.5rem;">
+        <span>🗺️</span>
+        <p>Carte / plan d'accès</p>
+      </div>
+      <a href="rdv.html" class="btn secondary" style="margin-top:1.5rem;">Prendre rendez-vous en ligne</a>
+    </div>
+
+    <div class="booking-panel">
+      <h2 style="margin-top:0;">Nous écrire</h2>
+      <p class="info-msg">Pour une urgence, appelez directement le cabinet plutôt que d'utiliser ce formulaire.</p>
+      <div id="contact-alert"></div>
+      <form id="contact-form">
+        <div class="field">
+          <label for="nom">Nom complet *</label>
+          <input type="text" id="nom" required />
+        </div>
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="field">
+          <label for="telephone">Téléphone (optionnel)</label>
+          <input type="tel" id="telephone" />
+        </div>
+        <div class="field">
+          <label for="message">Votre message *</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn" id="contact-submit">Envoyer le message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="layout-footer"></div>
+<script src="js/layout.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

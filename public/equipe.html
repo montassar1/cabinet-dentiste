@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>L'Équipe — Cabinet Dentaire</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="equipe">
+
+<div id="layout-header"></div>
+
+<section class="page-hero">
+  <h1>L'Équipe</h1>
+  <p>Des praticiens et assistantes dentaires à votre écoute, à chaque étape de votre parcours de soin.</p>
+</section>
+
+<section>
+  <h2>Nos praticiens</h2>
+  <div class="grid" id="equipe-liste">
+    <!-- Rempli dynamiquement depuis /api/config par js/layout.js -->
+  </div>
+</section>
+
+<section>
+  <h2>Le reste de l'équipe</h2>
+  <div class="grid">
+    <div class="card staff-card">
+      <div class="photo-placeholder photo-placeholder--round"><img src="https://images.unsplash.com/photo-1758518729286-e8d94cc231f5?fm=jpg&q=80&w=300&auto=format&fit=crop" alt="Léa Fontaine" /></div>
+      <h3>Léa Fontaine</h3>
+      <p class="staff-specialite">Assistante dentaire</p>
+      <p>Vous accueille et assiste les praticiens pendant les soins.</p>
+    </div>
+    <div class="card staff-card">
+      <div class="photo-placeholder photo-placeholder--round"><img src="https://plus.unsplash.com/premium_photo-1675968758591-c7a17025b796?fm=jpg&q=80&w=300&auto=format&fit=crop" alt="Karim Ouali" /></div>
+      <h3>Karim Ouali</h3>
+      <p class="staff-specialite">Secrétariat médical</p>
+      <p>Gère la prise de rendez-vous et le suivi administratif.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Formation continue</h2>
+  <p>
+    Notre équipe se forme régulièrement aux nouvelles techniques et
+    technologies dentaires (implantologie, orthodontie invisible,
+    esthétique) afin de proposer des soins conformes aux dernières
+    recommandations.
+  </p>
+  <a href="rdv.html" class="btn">Prendre rendez-vous avec l'équipe</a>
+</section>
+
+<div id="layout-footer"></div>
+<script src="js/layout.js"></script>
+</body>
+</html>

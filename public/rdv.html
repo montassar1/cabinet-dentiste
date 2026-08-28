@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prendre rendez-vous — Cabinet Dentaire</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="rdv">
+
+<div id="layout-header"></div>
+
+<section>
+  <h2>Prendre rendez-vous en ligne</h2>
+  <p class="info-msg">Choisissez une date, puis un créneau disponible, et complétez vos informations.</p>
+
+  <div id="alert-zone"></div>
+
+  <div class="booking-layout">
+    <div class="booking-panel">
+      <div class="field">
+        <label for="date-input">1. Choisissez une date</label>
+        <input type="date" id="date-input" />
+      </div>
+
+      <div class="field">
+        <label>2. Choisissez un créneau</label>
+        <div id="slots-container">
+          <p class="info-msg">Sélectionnez d'abord une date.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-panel">
+      <form id="booking-form">
+        <div class="field">
+          <label>3. Vos informations</label>
+        </div>
+        <div class="field">
+          <label for="nom">Nom complet *</label>
+          <input type="text" id="nom" required />
+        </div>
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="field">
+          <label for="telephone">Téléphone *</label>
+          <input type="tel" id="telephone" required />
+        </div>
+        <div class="field">
+          <label for="motif">Motif de la visite (optionnel)</label>
+          <textarea id="motif" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn" id="submit-btn" disabled>
+          Confirmer le rendez-vous
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="layout-footer"></div>
+<script src="js/layout.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

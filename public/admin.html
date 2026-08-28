@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Espace admin — Cabinet Dentaire</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">🦷 Cabinet Dentaire — Admin</a>
+  <nav class="site-nav">
+    <a href="index.html">Voir le site</a>
+  </nav>
+</header>
+
+<section>
+  <div class="alert error">
+    ⚠️ Démo locale : cette page n'est pas protégée par mot de passe. Avant
+    toute mise en ligne réelle, ajoutez une authentification (voir README).
+  </div>
+
+  <h2>Rendez-vous</h2>
+  <div id="rdv-alert"></div>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Patient</th>
+        <th>Contact</th>
+        <th>Motif</th>
+        <th>Statut</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="rdv-tbody">
+      <tr><td colspan="7">Chargement...</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Fermer un jour (congé, jour férié...)</h2>
+  <form id="closed-day-form" class="booking-panel" style="max-width:400px;">
+    <div class="field">
+      <label for="closed-date">Date à fermer</label>
+      <input type="date" id="closed-date" required />
+    </div>
+    <button type="submit" class="btn">Fermer ce jour</button>
+  </form>
+
+  <h3 style="margin-top:2rem;">Jours actuellement fermés</h3>
+  <ul id="closed-days-list"><li>Chargement...</li></ul>
+</section>
+
+<section>
+  <h2>Messages de contact</h2>
+  <div id="messages-alert"></div>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Nom</th>
+        <th>Contact</th>
+        <th>Message</th>
+        <th>Statut</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="messages-tbody">
+      <tr><td colspan="6">Chargement...</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="site-footer">
+  <p>Espace admin — usage interne du cabinet.</p>
+</footer>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
