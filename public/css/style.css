@@ -350,6 +350,19 @@ footer.site-footer {
 
 .map-placeholder--wide { min-height: 260px; }
 
+a.map-placeholder {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+a.map-placeholder:hover { opacity: 0.85; }
+
+.map-placeholder .map-adresse {
+  font-weight: 600;
+  opacity: 1;
+}
+
 /* Cartes valeurs / avantages */
 
 .value-card {

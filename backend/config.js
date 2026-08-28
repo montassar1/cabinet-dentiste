@@ -4,11 +4,11 @@
 module.exports = {
   cabinet: {
     nom: "Cabinet Dentaire Sourire & Santé",
-    adresse: "12 Avenue de la République, 75011 Paris",
+    adresse: "Liège, Belgique",
     telephone: "01 23 45 67 89",
     email: "contact@cabinet-dentaire-exemple.fr",
     praticiens: [
-      { nom: "Dr. Amine Belhadj", specialite: "Chirurgien-dentiste" },
+      { nom: "Dr. Hamed Benzina", specialite: "Chirurgien-dentiste" },
       { nom: "Dr. Sarah Lemoine", specialite: "Orthodontiste" }
     ]
   },

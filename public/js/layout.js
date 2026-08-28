@@ -48,20 +48,22 @@ async function injecterInfosCabinet() {
     setText("contact-adresse", c.adresse);
     setText("contact-tel", c.telephone);
     setText("contact-email", c.email);
+    setText("map-adresse", c.adresse);
     setText("urgence-tel", c.telephone);
 
     const equipeEl = document.getElementById("equipe-liste");
     if (equipeEl && Array.isArray(c.praticiens)) {
-      const photosParticiens = [
-        "https://plus.unsplash.com/premium_photo-1681996428751-93e0294fe98d?fm=jpg&q=80&w=300&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1756699277286-5166560ecd40?fm=jpg&q=80&w=300&auto=format&fit=crop"
-      ];
+      const photosParticiens = {
+        "Dr. Hamed Benzina": "img/hamed.jpg",
+        "Dr. Sarah Lemoine": "https://plus.unsplash.com/premium_photo-1681996428751-93e0294fe98d?fm=jpg&q=80&w=300&auto=format&fit=crop"
+      };
+      const photoParDefaut = "https://images.unsplash.com/photo-1756699277286-5166560ecd40?fm=jpg&q=80&w=300&auto=format&fit=crop";
       equipeEl.innerHTML = c.praticiens
         .map(
-          (p, i) => `
+          (p) => `
         <div class="card staff-card">
           <div class="photo-placeholder photo-placeholder--round">
-            <img src="${photosParticiens[i % photosParticiens.length]}" alt="${p.nom}" />
+            <img src="${photosParticiens[p.nom] || photoParDefaut}" alt="${p.nom}" />
           </div>
           <h3>${p.nom}</h3>
           <p class="staff-specialite">${p.specialite}</p>
