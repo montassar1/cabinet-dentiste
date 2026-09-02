@@ -1,0 +1,21 @@
+# Cabinet Dentaire Sourire & Santé
+
+> Cabinet dentaire situé à Liège, Belgique. Prise de rendez-vous en ligne, soins conservateurs, urgences dentaires, implantologie, esthétique dentaire et orthodontie pour enfants et adultes.
+
+Adresse : Rue de l'Exemple 1, 4000 Liège, Belgique
+Téléphone : 01 23 45 67 89
+Email : contact@cabinet-dentaire-exemple.fr
+Horaires : Lundi - Vendredi, 9h00-12h30 et 14h00-18h30
+
+## Pages
+
+- [Accueil](https://www.cabinet-dentaire-liege.be/index.html) : présentation générale du cabinet
+- [Le Cabinet](https://www.cabinet-dentaire-liege.be/cabinet.html) : locaux, valeurs et équipements
+- [L'Équipe](https://www.cabinet-dentaire-liege.be/equipe.html) : praticiens et personnel soignant
+- [Soins](https://www.cabinet-dentaire-liege.be/soins.html) : liste complète des soins proposés
+- [Implantologie](https://www.cabinet-dentaire-liege.be/implantologie.html) : pose d'implants dentaires
+- [Esthétique dentaire](https://www.cabinet-dentaire-liege.be/esthetique.html) : blanchiment, facettes, bonding
+- [Orthodontie](https://www.cabinet-dentaire-liege.be/orthodontie.html) : appareils fixes et gouttières invisibles
+- [Urgence dentaire](https://www.cabinet-dentaire-liege.be/urgence.html) : prise en charge des urgences
+- [Contact](https://www.cabinet-dentaire-liege.be/contact.html) : coordonnées et formulaire de contact
+- [Rendez-vous en ligne](https://www.cabinet-dentaire-liege.be/rdv.html) : réservation de créneau

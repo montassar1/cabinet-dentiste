@@ -55,7 +55,7 @@ async function injecterInfosCabinet() {
     if (equipeEl && Array.isArray(c.praticiens)) {
       const photosParticiens = {
         "Dr. Hamed Benzina": "img/hamed.jpg",
-        "Dr. Sarah Lemoine": "https://plus.unsplash.com/premium_photo-1681996428751-93e0294fe98d?fm=jpg&q=80&w=300&auto=format&fit=crop"
+        "Dr. Salma Benzina": "https://plus.unsplash.com/premium_photo-1681996428751-93e0294fe98d?fm=jpg&q=80&w=300&auto=format&fit=crop"
       };
       const photoParDefaut = "https://images.unsplash.com/photo-1756699277286-5166560ecd40?fm=jpg&q=80&w=300&auto=format&fit=crop";
       equipeEl.innerHTML = c.praticiens
@@ -63,7 +63,7 @@ async function injecterInfosCabinet() {
           (p) => `
         <div class="card staff-card">
           <div class="photo-placeholder photo-placeholder--round">
-            <img src="${photosParticiens[p.nom] || photoParDefaut}" alt="${p.nom}" />
+            <img src="${photosParticiens[p.nom] || photoParDefaut}" alt="${p.nom}" loading="lazy" />
           </div>
           <h3>${p.nom}</h3>
           <p class="staff-specialite">${p.specialite}</p>
