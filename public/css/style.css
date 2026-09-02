@@ -41,6 +41,7 @@ header.site-header {
   font-size: 1.25rem;
   color: var(--teal-dark);
   text-decoration: none;
+  animation: none;
 }
 
 nav.site-nav {

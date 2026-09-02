@@ -29,10 +29,19 @@ function activerMenuMobile() {
   toggle.addEventListener("click", () => nav.classList.toggle("open"));
 }
 
-async function injecterInfosCabinet() {
+async function chargerConfigCabinet() {
   try {
     const res = await fetch("/api/config");
-    const data = await res.json();
+    return await res.json();
+  } catch (e) {
+    console.error("Impossible de charger les infos du cabinet :", e);
+    return null;
+  }
+}
+
+function appliquerInfosCabinet(data) {
+  if (!data) return;
+  try {
     const c = data.cabinet;
 
     const setText = (id, valeur) => {
@@ -73,18 +82,19 @@ async function injecterInfosCabinet() {
         .join("");
     }
   } catch (e) {
-    console.error("Impossible de charger les infos du cabinet :", e);
+    console.error("Impossible d'afficher les infos du cabinet :", e);
   }
 }
 
 async function initLayout() {
-  await Promise.all([
+  const [, , config] = await Promise.all([
     chargerFragment("/partials/nav.html", "layout-header"),
-    chargerFragment("/partials/footer.html", "layout-footer")
+    chargerFragment("/partials/footer.html", "layout-footer"),
+    chargerConfigCabinet()
   ]);
   activerOngletCourant();
   activerMenuMobile();
-  await injecterInfosCabinet();
+  appliquerInfosCabinet(config);
   document.dispatchEvent(new CustomEvent("layout:ready"));
 }
 
