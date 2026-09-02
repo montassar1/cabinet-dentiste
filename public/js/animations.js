@@ -2,9 +2,9 @@
 // (fondu + léger glissement), sans dépendance externe.
 
 const SELECTEURS_ANIMES = [
-  ".page-hero h1",
   ".page-hero p",
-  ".hero-content > *",
+  ".hero-content p",
+  ".hero-content .btn",
   ".hero-visual",
   "section h2",
   ".booking-layout > div > p",

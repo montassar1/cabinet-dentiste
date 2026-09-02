@@ -147,6 +147,8 @@ nav.site-nav a.btn-nav:hover { color: white; }
   font-size: 2.4rem;
   margin: 0 0 1rem;
   color: var(--teal-dark);
+  animation: titre-apparition 0.8s ease both;
+  animation-delay: 0.1s;
 }
 
 .hero p { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
@@ -268,6 +270,16 @@ footer.site-footer {
   text-align: center;
 }
 
+@keyframes titre-apparition {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes trait-dessine {
+  from { width: 0; }
+  to { width: 64px; }
+}
+
 .page-hero h1 {
   position: relative;
   display: inline-block;
@@ -275,6 +287,8 @@ footer.site-footer {
   font-size: 2.1rem;
   margin: 0 0 0.75rem;
   padding-bottom: 0.6rem;
+  animation: titre-apparition 0.8s ease both;
+  animation-delay: 0.1s;
 }
 
 .page-hero h1::after {
@@ -286,10 +300,9 @@ footer.site-footer {
   height: 3px;
   background: var(--teal);
   transform: translateX(-50%);
-  transition: width 0.7s ease 0.35s;
+  animation: trait-dessine 0.6s ease both;
+  animation-delay: 0.1s;
 }
-
-.page-hero h1.visible::after { width: 64px; }
 
 .page-hero p { transition-delay: 150ms; }
 
@@ -646,7 +659,6 @@ table.admin-table th { color: var(--muted); font-weight: 600; }
 .timeline li.reveal:nth-child(3) { transition-delay: 180ms; }
 .timeline li.reveal:nth-child(4) { transition-delay: 270ms; }
 
-.hero-content.reveal, .hero-visual.reveal { transition-delay: 0ms; }
 .hero-visual.reveal { transition-delay: 120ms; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -655,6 +667,12 @@ table.admin-table th { color: var(--muted); font-weight: 600; }
     opacity: 1;
     transform: none;
   }
+
+  .page-hero h1, .hero h1, .page-hero h1::after {
+    animation: none;
+  }
+
+  .page-hero h1::after { width: 64px; }
 }
 
 .card, .value-card, .staff-card {
