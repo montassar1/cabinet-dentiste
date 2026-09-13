@@ -361,9 +361,9 @@ footer.site-footer {
 
 .photo-placeholder--round img { min-height: 0; }
 
-.photo-placeholder--wide { min-height: 260px; }
+.photo-placeholder--wide { height: 320px; }
 
-.photo-placeholder--wide img { min-height: 260px; }
+.photo-placeholder--wide img { height: 320px; }
 
 .photo-gallery {
   display: grid;

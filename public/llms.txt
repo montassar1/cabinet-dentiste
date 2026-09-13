@@ -2,8 +2,8 @@
 
 > Cabinet dentaire situé à Liège, Belgique. Prise de rendez-vous en ligne, soins conservateurs, urgences dentaires, implantologie, esthétique dentaire et orthodontie pour enfants et adultes.
 
-Adresse : Rue de l'Exemple 1, 4000 Liège, Belgique
-Téléphone : 01 23 45 67 89
+Adresse : Rue Sainte-Walburge 359, 4000 Liège, Belgique
+Téléphone : 0465 46 90 72
 Email : contact@cabinet-dentaire-exemple.fr
 Horaires : Lundi - Vendredi, 9h00-12h30 et 14h00-18h30
 
@@ -11,7 +11,7 @@ Horaires : Lundi - Vendredi, 9h00-12h30 et 14h00-18h30
 
 - [Accueil](https://www.cabinet-dentaire-liege.be/index.html) : présentation générale du cabinet
 - [Le Cabinet](https://www.cabinet-dentaire-liege.be/cabinet.html) : locaux, valeurs et équipements
-- [L'Équipe](https://www.cabinet-dentaire-liege.be/equipe.html) : praticiens et personnel soignant
+- [Qui sommes-nous](https://www.cabinet-dentaire-liege.be/equipe.html) : présentation du Dr. Hamed Benzina, chirurgien-dentiste
 - [Soins](https://www.cabinet-dentaire-liege.be/soins.html) : liste complète des soins proposés
 - [Implantologie](https://www.cabinet-dentaire-liege.be/implantologie.html) : pose d'implants dentaires
 - [Esthétique dentaire](https://www.cabinet-dentaire-liege.be/esthetique.html) : blanchiment, facettes, bonding

@@ -5,8 +5,8 @@ module.exports = {
   cabinet: {
     nom: "Cabinet Dentaire Sourire & Santé",
 
-    adresse: "Rue de l'Exemple 1, 4000 Liège, Belgique",
-    telephone: "01 23 45 67 89",
+    adresse: "Rue Sainte-Walburge 359, 4000 Liège, Belgique",
+    telephone: "0465 46 90 72",
     email: "contact@cabinet-dentaire-exemple.fr",
     praticiens: [
       { nom: "Dr. Hamed Benzina", specialite: "Chirurgien-dentiste" },

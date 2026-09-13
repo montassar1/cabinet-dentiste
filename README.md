@@ -50,7 +50,7 @@ depuis `public/partials/nav.html` sur chaque page) :
 
 - `index.html` — Accueil
 - `cabinet.html` — Le Cabinet (présentation, valeurs, équipements, galerie, accès)
-- `equipe.html` — L'Équipe (praticiens injectés depuis `config.js`, reste de l'équipe)
+- `equipe.html` — Qui sommes-nous (présentation du Dr. Hamed Benzina, chirurgien-dentiste)
 - `soins.html` — Vue d'ensemble des soins, avec liens vers les pages dédiées
 - `implantologie.html`, `esthetique.html`, `orthodontie.html` — pages détaillées par spécialité (étapes du traitement, FAQ)
 - `urgence.html` — Numéro d'urgence en avant, conseils en attendant le RDV
