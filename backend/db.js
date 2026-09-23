@@ -5,7 +5,12 @@
 const fs = require("fs");
 const path = require("path");
 
-const DB_PATH = path.join(__dirname, "data", "db.json");
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, "data");
+const DB_PATH = path.join(DATA_DIR, "db.json");
+
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
 
 function lireBrut() {
   if (!fs.existsSync(DB_PATH)) {
