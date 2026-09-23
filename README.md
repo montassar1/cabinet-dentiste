@@ -46,7 +46,7 @@ npm run dev
 ## Pages du site
 
 Le site public compte désormais 9 pages, reliées par un même menu (chargé
-depuis `public/partials/nav.html` sur chaque page) :
+depuis `backend/public/partials/nav.html` sur chaque page) :
 
 - `index.html` — Accueil
 - `cabinet.html` — Le Cabinet (présentation, valeurs, équipements, galerie, accès)
@@ -60,7 +60,7 @@ depuis `public/partials/nav.html` sur chaque page) :
 
 Toutes les photos affichées sont des **placeholders** (icône + légende sur
 fond dégradé) à remplacer par de vraies photos du cabinet — voir la classe
-CSS `.photo-placeholder` dans `public/css/style.css`.
+CSS `.photo-placeholder` dans `backend/public/css/style.css`.
 
 ## Comment ça marche
 
@@ -69,10 +69,10 @@ CSS `.photo-placeholder` dans `public/css/style.css`.
   `backend/config.js` — c'est le premier fichier à modifier pour
   personnaliser le site avec les vraies informations du cabinet. Ces infos
   sont injectées automatiquement dans toutes les pages par
-  `public/js/layout.js` (logo, pied de page, page équipe, page contact...).
+  `backend/public/js/layout.js` (logo, pied de page, page équipe, page contact...).
 - Le menu et le pied de page sont communs à toutes les pages : ils vivent
-  dans `public/partials/nav.html` et `public/partials/footer.html`, chargés
-  par `public/js/layout.js`. Pour ajouter/renommer un onglet, il suffit de
+  dans `backend/public/partials/nav.html` et `backend/public/partials/footer.html`, chargés
+  par `backend/public/js/layout.js`. Pour ajouter/renommer un onglet, il suffit de
   modifier `nav.html` une seule fois.
 - Quand un patient choisit une date sur `rdv.html`, le site interroge
   `GET /api/slots?date=...` qui calcule les créneaux encore libres (horaires
@@ -117,20 +117,20 @@ cabinet-dentaire/
 │   ├── config.js             # Infos du cabinet + horaires (à personnaliser)
 │   ├── db.js                  # Accès aux données (fichier JSON)
 │   ├── slots.js                # Calcul des créneaux disponibles
-│   └── data/db.json             # Données (créé automatiquement)
-├── public/
-│   ├── index.html, cabinet.html, equipe.html, soins.html,
-│   │   implantologie.html, esthetique.html, orthodontie.html,
-│   │   urgence.html, contact.html, rdv.html, admin.html
-│   ├── partials/
-│   │   ├── nav.html          # Menu commun à toutes les pages
-│   │   └── footer.html        # Pied de page commun
-│   ├── css/style.css
-│   └── js/
-│       ├── layout.js          # Charge menu/pied de page + infos du cabinet
-│       ├── booking.js           # Logique de la page de réservation
-│       ├── contact.js            # Logique du formulaire de contact
-│       └── admin.js               # Logique de l'espace admin
+│   ├── data/db.json             # Données (créé automatiquement)
+│   └── public/                   # Fichiers statiques servis tels quels
+│       ├── index.html, cabinet.html, equipe.html, soins.html,
+│       │   implantologie.html, esthetique.html, orthodontie.html,
+│       │   urgence.html, contact.html, rdv.html, admin.html
+│       ├── partials/
+│       │   ├── nav.html      # Menu commun à toutes les pages
+│       │   └── footer.html    # Pied de page commun
+│       ├── css/style.css
+│       └── js/
+│           ├── layout.js      # Charge menu/pied de page + infos du cabinet
+│           ├── booking.js       # Logique de la page de réservation
+│           ├── contact.js        # Logique du formulaire de contact
+│           └── admin.js           # Logique de l'espace admin
 ├── package.json
 └── README.md
 ```
