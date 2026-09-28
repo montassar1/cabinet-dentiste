@@ -13,6 +13,14 @@ function afficherAlerte(zone, message, type) {
   zone.innerHTML = `<div class="alert ${type}">${message}</div>`;
 }
 
+// Les données affichées ici (nom, email, motif...) viennent des patients :
+// on échappe avant insertion dans le HTML pour éviter toute injection.
+function echapper(texte) {
+  const div = document.createElement("div");
+  div.textContent = texte ?? "";
+  return div.innerHTML;
+}
+
 // Toute réponse 401 signifie que la session a expiré : on renvoie au login.
 async function api(url, options) {
   const res = await fetch(url, options);
@@ -53,9 +61,9 @@ async function chargerRendezVous() {
     <tr>
       <td>${r.date}</td>
       <td>${r.heure}</td>
-      <td>${r.nom}</td>
-      <td>${r.email}<br/>${r.telephone}</td>
-      <td>${r.motif || "—"}</td>
+      <td>${echapper(r.nom)}</td>
+      <td>${echapper(r.email)}<br/>${echapper(r.telephone)}</td>
+      <td>${r.motif ? echapper(r.motif) : "—"}</td>
       <td><span class="status-badge ${r.status}">${r.status === "confirme" ? "Confirmé" : "Annulé"}</span></td>
       <td>${
         r.status === "confirme"
@@ -140,9 +148,9 @@ async function chargerMessages() {
       (m) => `
     <tr>
       <td>${new Date(m.creeLe).toLocaleString("fr-FR")}</td>
-      <td>${m.nom}</td>
-      <td>${m.email}${m.telephone ? "<br/>" + m.telephone : ""}</td>
-      <td>${m.message}</td>
+      <td>${echapper(m.nom)}</td>
+      <td>${echapper(m.email)}${m.telephone ? "<br/>" + echapper(m.telephone) : ""}</td>
+      <td>${echapper(m.message)}</td>
       <td><span class="status-badge ${m.lu ? "confirme" : "annule"}">${m.lu ? "Lu" : "Non lu"}</span></td>
       <td>${
         m.lu
