@@ -24,6 +24,27 @@ cd cabinet-dentaire
 npm install
 ```
 
+## Configurer l'accès à l'espace admin
+
+L'espace admin est protégé par email + mot de passe. Les identifiants se
+définissent par variables d'environnement, jamais dans le code : copier
+`.env.example` en `.env`, puis remplir :
+
+```
+ADMIN_EMAIL=adresse@du-cabinet.be
+ADMIN_PASSWORD_HASH=scrypt$...
+```
+
+Le mot de passe n'est jamais stocké en clair. Pour générer le hash :
+
+```bash
+node backend/hash-motdepasse.js "votre-mot-de-passe"
+```
+
+Copier la ligne affichée dans `ADMIN_PASSWORD_HASH`. Le fichier `.env`
+n'est pas versionné. En production (Railway), ces deux variables se
+définissent dans l'onglet *Variables* du service — voir `DEPLOIEMENT.md`.
+
 ## Lancer le site en local
 
 ```bash
@@ -92,20 +113,16 @@ CSS `.photo-placeholder` dans `backend/public/css/style.css`.
 Ce projet est pensé pour être testé en local et compris facilement. Avant
 de le publier pour de vrais patients, prévoir :
 
-1. **Protéger `admin.html` et les routes `/api/admin/*`** par une
-   authentification (mot de passe, ou connexion avec compte). Actuellement
-   n'importe qui connaissant l'URL peut voir/annuler les rendez-vous.
-2. **Remplacer le stockage JSON par une vraie base de données** si le
+1. **Remplacer le stockage JSON par une vraie base de données** si le
    cabinet gère un volume important de rendez-vous ou plusieurs
    praticiens en parallèle (le fichier JSON n'est pas conçu pour des accès
    concurrents intensifs).
-3. **Envoyer un email de confirmation** au patient et au cabinet après
+2. **Envoyer un email de confirmation** au patient et au cabinet après
    chaque réservation (par ex. avec un service comme Resend, SendGrid ou
    Brevo).
-4. **Ajouter un nom de domaine et un hébergement** (ex. Render, Railway,
-   VPS...) — dites-le moi le moment venu, je peux vous accompagner sur le
-   choix et la mise en ligne.
-5. **RGPD** : ajouter une mention de confidentialité sur le formulaire de
+3. **Ajouter un nom de domaine et un hébergement** (ex. Render, Railway,
+   VPS...) — voir `DEPLOIEMENT.md`.
+4. **RGPD** : ajouter une mention de confidentialité sur le formulaire de
    RDV, puisque des données de santé/contact de patients sont collectées.
 
 ## Structure du projet

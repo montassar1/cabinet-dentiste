@@ -545,6 +545,7 @@ a.map-placeholder:hover { opacity: 0.85; }
 .field input[type="text"],
 .field input[type="email"],
 .field input[type="tel"],
+.field input[type="password"],
 .field textarea {
   width: 100%;
   padding: 0.6rem 0.75rem;

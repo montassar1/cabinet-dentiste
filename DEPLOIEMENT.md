@@ -53,15 +53,35 @@ données sont stockées dans le volume persistant ; sinon (en local), elles
 restent dans `backend/data/db.json` comme avant. Aucune autre modification
 n'est nécessaire.
 
-## Étape 4 — Vérifier le déploiement
+## Étape 4 — Définir les identifiants de l'espace admin
+
+Toujours dans l'onglet **Variables** du service, ajouter :
+
+- `ADMIN_EMAIL` — l'adresse email de connexion à l'espace admin
+- `ADMIN_PASSWORD_HASH` — le hash du mot de passe (jamais le mot de passe
+  en clair)
+
+Le hash se génère en local avec :
+
+```bash
+node backend/hash-motdepasse.js "votre-mot-de-passe"
+```
+
+Ces valeurs se trouvent aussi dans le fichier `.env` local (non versionné).
+Sans ces deux variables, l'espace admin refuse toute connexion.
+
+Ajouter également `NODE_ENV` = `production` : le cookie de session est
+alors marqué `Secure` (transmis uniquement en HTTPS).
+
+## Étape 5 — Vérifier le déploiement
 
 Railway attribue une URL du type `https://tonsite.up.railway.app`. Vérifier
 que :
 - Le site s'affiche (`/`, `/rdv.html`, etc.)
 - La prise de rendez-vous fonctionne (`/rdv.html`)
-- L'espace admin affiche bien les données (`/admin.html`)
+- La connexion à l'espace admin fonctionne (`/admin.html`)
 
-## Étape 5 — Brancher le nom de domaine (cabinet-dentaire-liege.be)
+## Étape 6 — Brancher le nom de domaine (cabinet-dentaire-liege.be)
 
 1. Dans Railway, sur le service du site : onglet **Settings** → **Domains**
    → *Custom Domain* → entrer `www.cabinet-dentaire-liege.be`.
@@ -85,12 +105,12 @@ Ces points restent valables (voir aussi le README) et sont d'autant plus
 importants qu'il s'agit maintenant d'un vrai cabinet avec de vraies données
 patients :
 
-1. **Protéger `/admin.html` et les routes `/api/admin/*`** par un mot de
-   passe avant l'ouverture — actuellement accessible à quiconque connaît
-   l'URL.
-2. **Corriger l'adresse email** dans `backend/config.js` : elle est encore
+1. **Corriger l'adresse email** dans `backend/config.js` : elle est encore
    à `contact@cabinet-dentaire-exemple.fr` (l'adresse de démonstration),
    alors que le domaine réel est `cabinet-dentaire-liege.be`.
-3. **RGPD** : ajouter une mention de confidentialité sur le formulaire de
+2. **RGPD** : ajouter une mention de confidentialité sur le formulaire de
    RDV et de contact, puisque des données de patients sont collectées.
-4. Envisager un email de confirmation automatique après chaque réservation.
+3. Envisager un email de confirmation automatique après chaque réservation.
+
+Les routes `/api/admin/*` sont désormais protégées par email + mot de passe
+(voir l'étape 4).

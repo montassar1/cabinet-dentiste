@@ -4,10 +4,15 @@ const path = require("path");
 
 const config = require("./config");
 const db = require("./db");
+const auth = require("./auth");
 const { creneauxDisponibles, estDateValide } = require("./slots");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Railway place l'app derrière un proxy : nécessaire pour que req.ip
+// reflète l'IP réelle du client (limitation des tentatives de connexion).
+app.set("trust proxy", 1);
 
 app.use(cors());
 app.use(express.json());
@@ -59,7 +64,17 @@ app.post("/api/appointments", (req, res) => {
   res.status(201).json({ message: "Rendez-vous confirmé.", rendezVous: rdv });
 });
 
-// --- API admin (à protéger par une authentification avant mise en ligne réelle) ---
+// --- Authentification admin ------------------------------------------
+// Ces trois routes sont déclarées avant le garde ci-dessous, donc restent
+// accessibles sans être connecté.
+
+app.post("/api/admin/login", auth.connecter);
+app.post("/api/admin/logout", auth.deconnecter);
+app.get("/api/admin/session", auth.etatSession);
+
+// --- API admin (tout ce qui suit exige une session valide) -----------
+
+app.use("/api/admin", auth.exigerAuth);
 
 app.get("/api/admin/appointments", (req, res) => {
   const rdvs = db
@@ -134,4 +149,10 @@ app.patch("/api/admin/contact-messages/:id/lu", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Site du cabinet dentaire lancé : http://localhost:${PORT}`);
   console.log(`Espace admin : http://localhost:${PORT}/admin.html`);
+  if (!auth.authConfiguree) {
+    console.warn(
+      "ATTENTION : ADMIN_EMAIL / ADMIN_PASSWORD_HASH ne sont pas définis. " +
+        "L'espace admin refusera toute connexion."
+    );
+  }
 });
