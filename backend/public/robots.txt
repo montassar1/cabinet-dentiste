@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 
-Sitemap: https://www.cabinet-dentaire-liege.be/sitemap.xml
+Sitemap: https://www.dentaliege.be/sitemap.xml

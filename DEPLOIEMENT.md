@@ -81,16 +81,16 @@ que :
 - La prise de rendez-vous fonctionne (`/rdv.html`)
 - La connexion à l'espace admin fonctionne (`/admin.html`)
 
-## Étape 6 — Brancher le nom de domaine (cabinet-dentaire-liege.be)
+## Étape 6 — Brancher le nom de domaine (dentaliege.be)
 
 1. Dans Railway, sur le service du site : onglet **Settings** → **Domains**
-   → *Custom Domain* → entrer `www.cabinet-dentaire-liege.be`.
+   → *Custom Domain* → entrer `www.dentaliege.be`.
 2. Railway indique un enregistrement DNS (type `CNAME`, cible fournie par
    Railway) à ajouter.
 3. Chez le registrar du domaine (EasyHost si le domaine y a été acheté, ou
    un autre bureau d'enregistrement) : aller dans la gestion DNS du domaine
    et ajouter cet enregistrement `CNAME`.
-4. Pour que `cabinet-dentaire-liege.be` (sans le `www`) fonctionne aussi,
+4. Pour que `dentaliege.be` (sans le `www`) fonctionne aussi,
    répéter l'opération ou ajouter une redirection selon ce que propose le
    registrar.
 5. Propagation DNS : peut prendre de quelques minutes à quelques heures.
@@ -105,12 +105,9 @@ Ces points restent valables (voir aussi le README) et sont d'autant plus
 importants qu'il s'agit maintenant d'un vrai cabinet avec de vraies données
 patients :
 
-1. **Corriger l'adresse email** dans `backend/config.js` : elle est encore
-   à `contact@cabinet-dentaire-exemple.fr` (l'adresse de démonstration),
-   alors que le domaine réel est `cabinet-dentaire-liege.be`.
-2. **RGPD** : ajouter une mention de confidentialité sur le formulaire de
+1. **RGPD** : ajouter une mention de confidentialité sur le formulaire de
    RDV et de contact, puisque des données de patients sont collectées.
-3. Envisager un email de confirmation automatique après chaque réservation.
+2. Envisager un email de confirmation automatique après chaque réservation.
 
 Les routes `/api/admin/*` sont désormais protégées par email + mot de passe
 (voir l'étape 4).

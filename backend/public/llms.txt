@@ -4,18 +4,18 @@
 
 Adresse : Rue Sainte-Walburge 359, 4000 Liège, Belgique
 Téléphone : 0465 46 90 72
-Email : contact@cabinet-dentaire-exemple.fr
+Email : dr.benzina.hamed@gmail.com
 Horaires : Lundi - Vendredi, 9h00-12h30 et 14h00-18h30
 
 ## Pages
 
-- [Accueil](https://www.cabinet-dentaire-liege.be/index.html) : présentation générale du cabinet
-- [Le Cabinet](https://www.cabinet-dentaire-liege.be/cabinet.html) : locaux, valeurs et équipements
-- [Qui sommes-nous](https://www.cabinet-dentaire-liege.be/equipe.html) : présentation du Dr. Hamed Benzina, chirurgien-dentiste
-- [Soins](https://www.cabinet-dentaire-liege.be/soins.html) : liste complète des soins proposés
-- [Implantologie](https://www.cabinet-dentaire-liege.be/implantologie.html) : pose d'implants dentaires
-- [Esthétique dentaire](https://www.cabinet-dentaire-liege.be/esthetique.html) : blanchiment, facettes, bonding
-- [Orthodontie](https://www.cabinet-dentaire-liege.be/orthodontie.html) : appareils fixes et gouttières invisibles
-- [Urgence dentaire](https://www.cabinet-dentaire-liege.be/urgence.html) : prise en charge des urgences
-- [Contact](https://www.cabinet-dentaire-liege.be/contact.html) : coordonnées et formulaire de contact
-- [Rendez-vous en ligne](https://www.cabinet-dentaire-liege.be/rdv.html) : réservation de créneau
+- [Accueil](https://www.dentaliege.be/index.html) : présentation générale du cabinet
+- [Le Cabinet](https://www.dentaliege.be/cabinet.html) : locaux, valeurs et équipements
+- [Qui sommes-nous](https://www.dentaliege.be/equipe.html) : présentation du Dr. Hamed Benzina, chirurgien-dentiste
+- [Soins](https://www.dentaliege.be/soins.html) : liste complète des soins proposés
+- [Implantologie](https://www.dentaliege.be/implantologie.html) : pose d'implants dentaires
+- [Esthétique dentaire](https://www.dentaliege.be/esthetique.html) : blanchiment, facettes, bonding
+- [Orthodontie](https://www.dentaliege.be/orthodontie.html) : appareils fixes et gouttières invisibles
+- [Urgence dentaire](https://www.dentaliege.be/urgence.html) : prise en charge des urgences
+- [Contact](https://www.dentaliege.be/contact.html) : coordonnées et formulaire de contact
+- [Rendez-vous en ligne](https://www.dentaliege.be/rdv.html) : réservation de créneau
