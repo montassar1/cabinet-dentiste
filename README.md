@@ -117,9 +117,9 @@ de le publier pour de vrais patients, prévoir :
    cabinet gère un volume important de rendez-vous ou plusieurs
    praticiens en parallèle (le fichier JSON n'est pas conçu pour des accès
    concurrents intensifs).
-2. **Envoyer un email de confirmation au patient** après chaque réservation
-   (le cabinet reçoit déjà une notification par email via Resend — voir
-   `DEPLOIEMENT.md`, étape 5).
+2. **Envoyer un email de confirmation** au patient et au cabinet après
+   chaque réservation (par ex. avec un service comme Resend, SendGrid ou
+   Brevo).
 3. **Ajouter un nom de domaine et un hébergement** (ex. Render, Railway,
    VPS...) — voir `DEPLOIEMENT.md`.
 4. **RGPD** : ajouter une mention de confidentialité sur le formulaire de
