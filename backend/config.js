@@ -7,7 +7,7 @@ module.exports = {
 
     adresse: "Rue Sainte-Walburge 359, 4000 Liège, Belgique",
     telephone: "0465 46 90 72",
-    email: "dr.benzina.hamed@gmail.com",
+    email: "dentiste.liege.urgence@gmail.com",
     praticiens: [
       { nom: "Dr. Hamed Benzina", specialite: "Chirurgien-dentiste" },
       { nom: "Dr. Salma Benzina", specialite: "Orthodontiste" }
