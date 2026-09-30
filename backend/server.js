@@ -24,8 +24,9 @@ app.use(express.static(path.join(__dirname, "public")));
 // --- API publique ---------------------------------------------------
 
 app.get("/api/config", (req, res) => {
+  const { emailNotifications, ...cabinetPublic } = config.cabinet;
   res.json({
-    cabinet: config.cabinet,
+    cabinet: cabinetPublic,
     dureeCreneauMinutes: config.dureeCreneauMinutes,
     fenetreReservationJours: config.fenetreReservationJours
   });
@@ -66,7 +67,7 @@ app.post("/api/appointments", (req, res) => {
   const rdv = db.creerRendezVous({ date, heure, nom, email, telephone, motif });
 
   notifications.envoyerNotification(
-    config.cabinet.email,
+    config.cabinet.emailNotifications || config.cabinet.email,
     `Nouveau rendez-vous — ${date} à ${heure}`,
     `Nouveau rendez-vous pris en ligne.\n\n` +
       `Patient : ${nom}\n` +
@@ -148,7 +149,7 @@ app.post("/api/contact-messages", (req, res) => {
   const msg = db.creerMessage({ nom, email, telephone, message });
 
   notifications.envoyerNotification(
-    config.cabinet.email,
+    config.cabinet.emailNotifications || config.cabinet.email,
     `Nouveau message de contact — ${nom}`,
     `Nouveau message reçu via le formulaire de contact.\n\n` +
       `De : ${nom}\n` +
