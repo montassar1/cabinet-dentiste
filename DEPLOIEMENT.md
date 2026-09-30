@@ -73,7 +73,29 @@ Sans ces deux variables, l'espace admin refuse toute connexion.
 Ajouter également `NODE_ENV` = `production` : le cookie de session est
 alors marqué `Secure` (transmis uniquement en HTTPS).
 
-## Étape 5 — Vérifier le déploiement
+## Étape 5 — Activer les notifications par email
+
+Sans cette étape, un nouveau rendez-vous ou message de contact n'est
+visible que dans l'espace admin — aucun email n'est envoyé.
+
+1. Créer un compte gratuit sur [resend.com](https://resend.com) (jusqu'à
+   3000 emails/mois gratuits).
+2. Dans Resend : **API Keys** → créer une clé.
+3. Dans Railway, onglet **Variables** du service, ajouter :
+   - `RESEND_API_KEY` = la clé copiée depuis Resend
+
+Chaque nouveau rendez-vous ou message de contact envoie alors
+automatiquement un email à l'adresse définie dans `backend/config.js`
+(`cabinet.email`).
+
+Par défaut, les emails partent depuis `onboarding@resend.dev` (adresse de
+test Resend, sans configuration DNS nécessaire — suffisant puisque ces
+emails sont à destination du cabinet, pas des patients). Pour envoyer
+depuis une adresse `@dentaliege.be`, il faut vérifier le domaine dans
+Resend (ajout d'enregistrements DNS chez le registrar) puis définir
+`RESEND_FROM_EMAIL` dans Railway.
+
+## Étape 6 — Vérifier le déploiement
 
 Railway attribue une URL du type `https://tonsite.up.railway.app`. Vérifier
 que :
@@ -81,7 +103,7 @@ que :
 - La prise de rendez-vous fonctionne (`/rdv.html`)
 - La connexion à l'espace admin fonctionne (`/admin.html`)
 
-## Étape 6 — Brancher le nom de domaine (dentaliege.be)
+## Étape 7 — Brancher le nom de domaine (dentaliege.be)
 
 1. Dans Railway, sur le service du site : onglet **Settings** → **Domains**
    → *Custom Domain* → entrer `www.dentaliege.be`.
@@ -107,7 +129,8 @@ patients :
 
 1. **RGPD** : ajouter une mention de confidentialité sur le formulaire de
    RDV et de contact, puisque des données de patients sont collectées.
-2. Envisager un email de confirmation automatique après chaque réservation.
+2. Envisager un email de confirmation automatique au patient après chaque
+   réservation (le cabinet reçoit déjà une notification, voir étape 5).
 
 Les routes `/api/admin/*` sont désormais protégées par email + mot de passe
 (voir l'étape 4).
