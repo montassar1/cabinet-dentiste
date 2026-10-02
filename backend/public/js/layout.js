@@ -49,8 +49,10 @@ function appliquerInfosCabinet(data) {
       if (el) el.textContent = valeur;
     };
 
-    setText("logo-nom", "🦷 " + c.nom);
+    const logo = document.getElementById("logo-nom");
+    if (logo) logo.alt = c.nom;
     setText("footer-nom", c.nom);
+    setText("footer-annee", new Date().getFullYear());
     setText("footer-adresse", c.adresse);
     setText("footer-tel", c.telephone);
     setText("footer-email", c.email);

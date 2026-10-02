@@ -66,17 +66,8 @@ app.post("/api/appointments", (req, res) => {
 
   const rdv = db.creerRendezVous({ date, heure, nom, email, telephone, motif });
 
-  notifications.envoyerNotification(
-    config.cabinet.emailNotifications || config.cabinet.email,
-    `Nouveau rendez-vous — ${date} à ${heure}`,
-    `Nouveau rendez-vous pris en ligne.\n\n` +
-      `Patient : ${nom}\n` +
-      `Date : ${date} à ${heure}\n` +
-      `Email : ${email}\n` +
-      `Téléphone : ${telephone}\n` +
-      `Motif : ${motif || "—"}\n\n` +
-      `Gérer ce rendez-vous : https://www.dentaliege.be/admin.html`
-  );
+  notifications.notifierNouveauRendezVous(rdv);
+  notifications.confirmerRendezVousAuPatient(rdv);
 
   res.status(201).json({ message: "Rendez-vous confirmé.", rendezVous: rdv });
 });
@@ -148,16 +139,7 @@ app.post("/api/contact-messages", (req, res) => {
   }
   const msg = db.creerMessage({ nom, email, telephone, message });
 
-  notifications.envoyerNotification(
-    config.cabinet.emailNotifications || config.cabinet.email,
-    `Nouveau message de contact — ${nom}`,
-    `Nouveau message reçu via le formulaire de contact.\n\n` +
-      `De : ${nom}\n` +
-      `Email : ${email}\n` +
-      `Téléphone : ${telephone || "—"}\n\n` +
-      `Message :\n${message}\n\n` +
-      `Gérer ce message : https://www.dentaliege.be/admin.html`
-  );
+  notifications.notifierNouveauMessage({ nom, email, telephone, message });
 
   res.status(201).json({ message: "Message envoyé.", contactMessage: msg });
 });

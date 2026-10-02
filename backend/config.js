@@ -3,7 +3,7 @@
 
 module.exports = {
   cabinet: {
-    nom: "Cabinet Dentaire Sourire & Santé",
+    nom: "Dentaliège",
 
     adresse: "Rue Sainte-Walburge 359, 4000 Liège, Belgique",
     telephone: "0465 46 90 72",
