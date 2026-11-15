@@ -386,6 +386,30 @@ footer.site-footer {
 .photo-gallery .photo-placeholder { min-height: 160px; }
 .photo-gallery .photo-placeholder img { min-height: 160px; }
 
+/* QR code vers l'agenda : utile depuis un ordinateur, inutile sur mobile */
+.qr-rdv {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.qr-rdv img {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  padding: 0.4rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.qr-rdv p { margin: 0; font-size: 0.9rem; }
+
+@media (max-width: 700px) {
+  .qr-rdv { display: none; }
+}
+
 .map-placeholder {
   border-radius: var(--radius);
   background: linear-gradient(135deg, #dbeafe, #ecfeff);

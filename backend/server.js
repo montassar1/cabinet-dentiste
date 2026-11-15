@@ -19,6 +19,8 @@ app.set("trust proxy", 1);
 
 app.use(cors());
 app.use(express.json());
+// La prise de rendez-vous se fait sur l'agenda en ligne ClickDoc
+app.get(["/rdv.html", "/ouverture-prochaine.html"], (req, res) => res.redirect(302, "https://agenda.clickdocdentist.be/short/5pVJdqWJkDpGRL4P"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // --- API publique ---------------------------------------------------
